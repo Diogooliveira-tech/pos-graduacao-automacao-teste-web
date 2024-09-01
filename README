@@ -1,0 +1,37 @@
+# Automação de Testes em Aplicações Web
+
+Este repositório contém materiais e exemplos relacionados a disciplina de **Automação de Testes em Aplicações Web**. O objetivo dessa disciplina é capacitar os alunos a compreender e aplicar os conceitos fundamentais e avançados relacionados à automação de testes em aplicações web. Ao final dessa disciplina, o objetivo é estar preparado para desenvolver e implementar testes automatizados de alta qualidade, eficiência e confiabilidade em projetos web.
+
+## Objetivo do Disciplina
+
+Capacitar-me a compreender e aplicar os conceitos fundamentais e avançados relacionados à automação de testes em aplicações web, fornecendo uma base sólida de conhecimentos teóricos e práticos para que possam desenvolver e implementar testes automatizados de alta qualidade, eficiência e confiabilidade em projetos web.
+
+## Ementa da Disciplina
+
+- Introdução a Aplicações Web
+- HTML para construção das páginas
+- CSS para estilização das páginas
+- Javascript para interação com usuário e servidor
+- A interação do Frontend com o Backend
+- Requisições Síncronas e Assíncronas
+- CSS Selector e XPath
+- Fundamentos e conceitos sobre Automação de Testes Web
+- Adicionando bibliotecas para estruturação dos testes e interação com navegadores Web
+- Escrevendo o primeiro teste automatizado Web
+- Estratégias de Identificação de Elementos
+- Esperas Explícitas e Implícitas
+- Comboboxes, Janelas e Drag and Drop
+- Tirando Screenshots
+- Execução de Testes Headless
+- Design Patterns para Automação Web
+- Configurações Avançadas
+- Execução de testes na nuvem
+- Relatórios de execução de testes
+- Boas práticas no uso da ferramenta
+
+## Como Usar
+
+Clone o repositório e siga os exemplos e exercícios propostos para aprimorar seus conhecimentos em automação de testes web. Certifique-se de seguir a ementa do curso e utilizar as boas práticas mencionadas para obter o máximo de proveito deste conteúdo.
+
+Professores: Samuel Lucas e Julio de Lima
+Curso: PGATS 
