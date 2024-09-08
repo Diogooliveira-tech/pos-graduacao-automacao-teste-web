@@ -66,4 +66,32 @@ Execução de Testes modo Headless
  - npx cypress run 
 
 
- parei 28 min aula 4
+duvida muito boa do henrique minuto 
+
+"Com base no que você acabou de mencionar, uma possibilidade seria fazer o cadastro do usuário antes, como estamos fazendo aqui. 
+Você sabe que o usuário já está cadastrado, mas poderíamos realizar isso anteriormente.
+ Minha dúvida é a seguinte:
+Existem duas boas práticas que, ao meu ver, parecem conflitantes nesse contexto. 
+A primeira é que cada teste deve ser independente, e a segunda é que preciso configurar as coisas antes de começar os testes. 
+Então, a questão é: se eu fizer um beforeAll para criar um novo usuário, isso não seria igual ao meu primeiro teste, que também cria um usuário? 
+Eu acabaria duplicando o código, porque no teste em si eu faria as validações, mas o passo a passo seria o mesmo. Parece que estarei repetindo a mesma ação só para usar o beforeAll. 
+Como funciona essa lógica? Qual o raciocínio por trás disso e o que eu deveria fazer nesse caso?"
+
+Professor:
+Tem dois conceitos chamados de rotinas de setup: São rotinas que a gente executa para preparar o nosso ambiente de testes.
+Então, por exemplo, aqui a gente testando um e-commerce, digamos que eu subisse a minha aplicação do zero toda vez. 
+subisseuma aplicação tipo zerada. Então eu vou entender por uma aplicação sem usuário, sem produtos, sem categorias, etc..
+
+setup
+  subir uma aplicação zerada - sem usuário, sem produtos, sem categorias, etc..
+  preparar dados que a gente precisa durante os testes: cadastrar usuários, produtos, categorias
+
+
+teardown "Seria o oposto", tipo já executei todos os testes e eu não quero deixar sujeira no meu banco de teste tipo, fiz 
+varias compras ali na minha suite de testes e eu não quero deixar esses pedidos, contando para as metricas lá de produto.
+Então na minha rotina de "teardown", eu posso: 
+ remover dados que foram criados durante o teste
+ derrubar a aplicação 
+
+
+

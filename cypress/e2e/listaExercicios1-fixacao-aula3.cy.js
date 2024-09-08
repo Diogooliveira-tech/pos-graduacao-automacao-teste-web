@@ -96,8 +96,8 @@ describe('Automation Exercise', () => {
 
         // assert - verificacao da saída do teste / comportamento esperado
 
-        // cy.get(`.login-form form p`).should('contain', 'Your email or password is incorrect!')
-        cy.get('p').should('contain', 'Your email or password is incorrect!')
+        cy.get(`.login-form form p`).should('contain', 'Your email or password is incorrect!')
+        //cy.get('p').should('contain', 'Your email or password is incorrect!') //pode achar N textos na tela
     });
 
     it('Test Case 4: Logout User', () => {
@@ -211,7 +211,7 @@ describe('Automation Exercise', () => {
 
     });
 
-    it.only('Test Case 15: Place Order: Register before Checkout', () => {
+    it('Test Case 15: Place Order: Register before Checkout', () => {
         const timestamp = new Date().getTime()
         const nome = "Iron Man"
 

@@ -33,5 +33,10 @@ Capacitar-me a compreender e aplicar os conceitos fundamentais e avançados rela
 
 Clone o repositório e siga os exemplos e exercícios propostos para aprimorar seus conhecimentos em automação de testes web. Certifique-se de seguir a ementa do curso e utilizar as boas práticas mencionadas para obter o máximo de proveito deste conteúdo.
 
+## Dependencias do projeto
+
+- faker
+  como instalar: npm install -D @faker-js/faker
+
 Professores: Samuel Lucas e Julio de Lima
 Curso: PGATS 
