@@ -52,4 +52,4 @@ https://devfinance-agilizei.netlify.app/
 
 O ideal para padronizar o nomes dos elementos é colocar o tipo do elemento abreviado e a sua ação. Por exemplo (btn-cancel, modal-confirmation...)
 
-Anotecoes
+# Anotacoes
