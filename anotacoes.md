@@ -131,3 +131,8 @@ pró
 contra
 - legibilidade prejudicada, com falta de contexto
 - acoes do sistema misturadas com comandos da ferramenta
+
+# Relatório de execução
+
+https://www.npmjs.com/package/cypress-mochawesome-reporter
+ ->  npm install -D cypress-mochawesome-reporter
