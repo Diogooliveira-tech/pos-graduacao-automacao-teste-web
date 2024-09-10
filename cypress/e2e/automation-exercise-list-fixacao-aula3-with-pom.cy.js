@@ -102,7 +102,7 @@ describe('Automation Exercise', () => {
        
         menu.irParaProdutos()
 
-        menu.irPara(menu.menus.PRODUTOS)// remover ou implementar
+       // menu.irPara(menu.menus.PRODUTOS)// remover ou implementar
 
         cy.url().should('contain', 'products')
         cy.get('.title').should('be.visible').and('contain', 'All Products')
