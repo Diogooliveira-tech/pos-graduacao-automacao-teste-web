@@ -64,6 +64,7 @@ Comandos para abrir e rodar o cypress
 
 Execução de Testes modo Headless
  - npx cypress run 
+ - rodar arquivo especifico: npx cypress run --spec cypress/e2e/automation-exercise-final-with-pom.cy.js
 
 
 duvida muito boa do henrique minuto 
@@ -135,4 +136,10 @@ contra
 # Relatório de execução
 
 https://www.npmjs.com/package/cypress-mochawesome-reporter
- ->  npm install -D cypress-mochawesome-reporter
+ -> npm install -D cypress-mochawesome-reporter
+ -> comando para rodar: npx cypress run
+
+https://automate.browserstack.com/dashboard/v2/builds/39cb427abb0ae1f3a222a63bafa7d1162761126f
+-> comando para rodar: browserstack-cypress run
+-> Ou passando nome de arquivo de teste especifico 
+-> comando: browserstack-cypress run --spec "cypress/e2e/automation-exercise-final-with-pom.cy.js”
