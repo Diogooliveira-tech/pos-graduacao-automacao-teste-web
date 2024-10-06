@@ -65,6 +65,7 @@ Comandos para abrir e rodar o cypress
 Execução de Testes modo Headless
  - npx cypress run 
  - rodar arquivo especifico: npx cypress run --spec cypress/e2e/automation-exercise-final-with-pom.cy.js
+ - npm run test *
 
 
 duvida muito boa do henrique minuto 
