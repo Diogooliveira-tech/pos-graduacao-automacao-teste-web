@@ -6,14 +6,12 @@ on:
   workflow_dispatch:
 
 jobs:
-  # Definição do job de testes E2E
-  e2e-tests:
+  # Job de inspeção de código
+  inspection:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
 
-      # Configuração do Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -21,6 +19,42 @@ jobs:
 
       - name: Instalando Yarn
         run: npm install -g yarn
+
+      - name: Instalando dependências
+        run: yarn install
+
+      - name: Padronização de código (Lint)
+        run: yarn lint
+
+  # Job de testes unitários
+  unit:
+    runs-on: ubuntu-latest
+    needs: [inspection]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+
+      - name: Instalando dependências
+        run: yarn install
+
+      - name: Executando testes unitários
+        run: yarn run test
+
+  # Job de testes E2E com Cypress
+  e2e-tests:
+    runs-on: ubuntu-latest
+    needs: [unit]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
 
       - name: Instalando dependências
         run: yarn install
@@ -51,3 +85,11 @@ jobs:
         with:
           name: screenshots
           path: cypress/screenshots
+
+  # Job de deploy
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [e2e-tests]
+    steps:
+      - name: Deploy
+        run: echo "Step de deploy concluído com sucesso"
