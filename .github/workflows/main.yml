@@ -30,6 +30,10 @@ jobs:
       - name: Instalando dependências
         run: yarn install
 
+      # Cria o diretório cypress/reports, caso não exista
+      - name: Criando diretório de relatórios
+        run: mkdir -p cypress/reports
+
       # Executa testes E2E com Cypress
       - name: Executando testes E2E com Cypress
         run: yarn run e2e
