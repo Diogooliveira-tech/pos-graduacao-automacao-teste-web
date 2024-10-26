@@ -1,1 +1,9 @@
 node_modules/
+log/
+results/
+reports/
+screenshots/
+.vscode/
+npm_install_debug.log
+cypress/screenshots/
+cypress/videos/
