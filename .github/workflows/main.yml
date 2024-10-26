@@ -11,6 +11,7 @@ jobs:
   # Job de testes E2E com Cypress
   e2e-tests:
     runs-on: ubuntu-latest
+    timeout-minutes: 30  # Define o tempo limite de 30 minutos
 
     steps:
       # Baixa o código do repositório
