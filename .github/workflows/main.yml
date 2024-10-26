@@ -27,9 +27,9 @@ jobs:
       - name: Configurando Corepack para Yarn
         run: corepack enable && corepack prepare yarn@stable --activate
 
-      # Instala dependências, incluindo Cypress
+      # Instala dependências, incluindo Cypress (sem --immutable)
       - name: Instalando dependências
-        run: yarn install --immutable --immutable-cache
+        run: yarn install --check-cache
 
       # Cria o diretório cypress/reports, caso não exista
       - name: Criando diretório de relatórios
