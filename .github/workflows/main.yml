@@ -1,18 +1,16 @@
-# CI de Nível 03 – Disparo automático
-name: 'Execução por Deploy'
+# CI de Nível 01 - Disparo manual a partir de 1 clique
 
-# Configuração de disparo automático
+# Nome do pipeline
+name: 'Execução Manual'
+
+# Gatilho para execução manual
 on:
-  workflow_run:
-    workflows: ['Execução Manual'] # Nome do pipeline
-    types:
-      - completed
+  workflow_dispatch:
 
 jobs:
   # Job de testes E2E com Cypress
   e2e-tests:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
     steps:
       # Baixa o código do repositório
@@ -28,7 +26,7 @@ jobs:
       - name: Instalando Yarn
         run: npm install -g yarn
 
-      # Instala dependências, incluindo o Cypress
+      # Instala dependências, incluindo Cypress
       - name: Instalando dependências
         run: yarn install
 
@@ -38,18 +36,13 @@ jobs:
         env:
           CYPRESS_BASE_URL: 'https://automationexercise.com'
 
-      # Geração do Relatório Mochawesome
-      - name: Gerar relatório com mochawesome
-        if: ${{ always() }}
-        run: npx mochawesome-merge cypress/reports/*.json > mochawesome.json && npx marge mochawesome.json
-
-      # Upload do relatório de testes como artefato
-      - name: Upload de relatório de testes
+      # Geração e upload do relatório de testes como artefato
+      - name: Gerar e fazer upload do relatório de testes
         if: ${{ always() }}
         uses: actions/upload-artifact@v4
         with:
-          name: relatorio-de-testes
-          path: mochawesome-report
+            name: relatorio-de-testes
+            path: mochawesome-report
 
       # Upload de screenshots em caso de falha
       - name: Upload de screenshots
