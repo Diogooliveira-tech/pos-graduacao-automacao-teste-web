@@ -36,17 +36,41 @@ jobs:
         env:
           CYPRESS_BASE_URL: 'https://automationexercise.com'
 
-      # Gera o relatório consolidado do mochawesome
+      # Gera o relatório consolidado do mochawesome (se houver arquivos JSON)
       - name: Gerando relatório mochawesome consolidado
-        run: npx mochawesome-merge cypress/reports/*.json > mochawesome.json && npx marge mochawesome.json
+        if: ${{ always() }}
+        run: |
+          if ls cypress/reports/*.json 1> /dev/null 2>&1; then
+            npx mochawesome-merge cypress/reports/*.json > mochawesome.json && npx marge mochawesome.json
+          else
+            echo "Nenhum relatório JSON encontrado para mesclar com mochawesome-merge."
+          fi
 
-      # Geração e upload do relatório de testes como artefato
+      # Upload do relatório Mochawesome como artefato
       - name: Gerar e fazer upload do relatório de testes
         if: ${{ always() }}
         uses: actions/upload-artifact@v4
         with:
           name: relatorio-de-testes
           path: mochawesome-report
+
+      # Verifica se o relatório BrowserStack existe
+      - name: Verificar existência do relatório BrowserStack
+        run: |
+          if [ -f "browserstack-cypress-report.json" ]; then
+            echo "BrowserStack report found"
+          else
+            echo "No BrowserStack report found"
+          fi
+
+      # Upload do relatório BrowserStack como artefato, se existir
+      - name: Upload do relatório BrowserStack
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: browserstack-cypress-report
+          path: browserstack-cypress-report.json
+          if-no-files-found: ignore
 
       # Upload de screenshots em caso de falha
       - name: Upload de screenshots
