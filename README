@@ -36,20 +36,22 @@ Clone o repositório e siga os exemplos e exercícios propostos para aprimorar s
 ## Dependências do Projeto
 
 - **Faker**: Biblioteca para geração de dados aleatórios.  
-  Comando para instalar: 
+  Comando para instalar:
   ```bash
   npm install -D @faker-js/faker
+  ```
 
 ## Configuração de Linting e Formatação de Código
+
 Este projeto utiliza ESLint e Prettier para garantir a qualidade e consistência do código.
 
 1. ESLint
-O ESLint é uma ferramenta de análise de código estático que ajuda a identificar e corrigir problemas de padrão de código e possíveis erros. Neste projeto, o ESLint está configurado para verificar as melhores práticas e regras recomendadas pelo Cypress e para garantir que o código siga o padrão do Prettier.
+   O ESLint é uma ferramenta de análise de código estático que ajuda a identificar e corrigir problemas de padrão de código e possíveis erros. Neste projeto, o ESLint está configurado para verificar as melhores práticas e regras recomendadas pelo Cypress e para garantir que o código siga o padrão do Prettier.
 
 Comando para Rodar o Lint
 Para verificar o código com o ESLint, use o comando: "npm run lint".
 
-Esse comando verifica todos os arquivos JavaScript no diretório cypress/**/*.js. Caso encontre problemas de formatação ou padrão, eles serão listados no terminal.
+Esse comando verifica todos os arquivos JavaScript no diretório cypress/\*_/_.js. Caso encontre problemas de formatação ou padrão, eles serão listados no terminal.
 
 Configuração do ESLint (eslint.config.js)
 O arquivo eslint.config.js define as regras de linting específicas para este projeto. Ele inclui:
@@ -62,29 +64,30 @@ Configuração básica do eslint.config.js:
 const cypressGlobals = require('globals').cypress;
 
 module.exports = [
-  {
-    ignores: ['cypress/reports/**'], // Ignora a pasta de relatórios
-    files: ['**/*.js'],
-    languageOptions: {
-      globals: {
-        ...cypressGlobals,
-        browser: true,
-        node: true
-      }
-    },
-    plugins: {
-      cypress: require('eslint-plugin-cypress'),
-      prettier: require('eslint-plugin-prettier')
-    },
-    rules: {
-      ...require('eslint-plugin-cypress').configs.recommended.rules,
-      ...require('eslint-config-prettier').rules,
-      'prettier/prettier': 'error'
-    }
-  }
+{
+ignores: ['cypress/reports/**'], // Ignora a pasta de relatórios
+files: ['**/*.js'],
+languageOptions: {
+globals: {
+...cypressGlobals,
+browser: true,
+node: true
+}
+},
+plugins: {
+cypress: require('eslint-plugin-cypress'),
+prettier: require('eslint-plugin-prettier')
+},
+rules: {
+...require('eslint-plugin-cypress').configs.recommended.rules,
+...require('eslint-config-prettier').rules,
+'prettier/prettier': 'error'
+}
+}
 ];
 
 ## 2. Prettier
+
 O Prettier é um formatador de código que garante consistência na formatação do código. Ele é configurado para este projeto com as regras definidas no arquivo .prettierrc.
 
 Comando para Rodar o Prettier
@@ -96,10 +99,10 @@ Configuração do Prettier (.prettierrc)
 O arquivo .prettierrc define as preferências de formatação, como uso de ponto e vírgula, aspas simples, etc. Aqui está a configuração:
 
 {
-  "semi": true,
-  "singleQuote": true,
-  "tabWidth": 2,
-  "trailingComma": "es5"
+"semi": true,
+"singleQuote": true,
+"tabWidth": 2,
+"trailingComma": "es5"
 }
 
 - semi: Adiciona ponto e vírgula ao final das instruções.
@@ -108,8 +111,9 @@ O arquivo .prettierrc define as preferências de formatação, como uso de ponto
 - trailingComma: Adiciona vírgula no final de objetos e arrays, onde aplicável.
 
 ## Resumo dos Comandos
-Comando	       : Descrição
-npm run lint	 : Verifica o código com ESLint
+
+Comando : Descrição
+npm run lint : Verifica o código com ESLint
 npm run format : Formata o código de acordo com as regras do Prettier
 
 Essa configuração garante que o código siga boas práticas de formatação e qualidade, facilitando a leitura e manutenção.
