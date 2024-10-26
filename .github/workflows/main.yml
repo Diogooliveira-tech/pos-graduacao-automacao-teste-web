@@ -1,17 +1,21 @@
-# CI de Nível 01 - Disparo manual a partir de 1 clique
-name: 'Execução Manual'
+# CI de Nível 03 – Disparo automático
+name: 'Execução por Deploy'
 
-# Gatilho para execução manual
+# Configuração de disparo automático
 on:
-  workflow_dispatch:
+  workflow_run:
+    workflows: ['Execução Manual'] # Nome do pipeline
+    types:
+      - completed
 
 jobs:
-  # Job de inspeção de código
-  inspection:
+  # Job de testes E2E com Cypress
+  e2e-tests:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
     steps:
-      # Baixa o código do repositório para o ambiente de execução
+      # Baixa o código do repositório
       - uses: actions/checkout@v4
 
       # Configura o Node.js na versão LTS
@@ -24,57 +28,11 @@ jobs:
       - name: Instalando Yarn
         run: npm install -g yarn
 
-      # Instala todas as dependências do projeto, incluindo eslint-plugin-cypress
+      # Instala dependências, incluindo o Cypress
       - name: Instalando dependências
         run: yarn install
 
-      # Executa o ESLint para verificar a padronização e a qualidade do código
-      - name: Padronização de código (Lint)
-        run: yarn lint
-
-  # Job de testes unitários
-  unit:
-    runs-on: ubuntu-latest
-    needs: [inspection] # Só roda após o job de inspeção
-
-    steps:
-      # Baixa o código do repositório para o ambiente de execução
-      - uses: actions/checkout@v4
-
-      # Configura o Node.js na versão LTS
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 'lts/*'
-
-      # Instala todas as dependências necessárias para os testes unitários
-      - name: Instalando dependências
-        run: yarn install
-
-      # Executa os testes unitários
-      - name: Executando testes unitários
-        run: yarn run test
-
-  # Job de testes E2E com Cypress
-  e2e-tests:
-    runs-on: ubuntu-latest
-    needs: [unit] # Só roda após os testes unitários
-
-    steps:
-      # Baixa o código do repositório para o ambiente de execução
-      - uses: actions/checkout@v4
-
-      # Configura o Node.js na versão LTS
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 'lts/*'
-
-      # Instala todas as dependências do projeto, incluindo o Cypress
-      - name: Instalando dependências
-        run: yarn install
-
-      # Executa os testes E2E com Cypress
+      # Executa testes E2E com Cypress
       - name: Executando testes E2E com Cypress
         run: yarn run e2e
         env:
@@ -100,13 +58,3 @@ jobs:
         with:
           name: screenshots
           path: cypress/screenshots
-
-  # Job de deploy
-  deploy:
-    runs-on: ubuntu-latest
-    needs: [e2e-tests] # Só roda após os testes E2E
-
-    steps:
-      # Etapa de deploy (simulada aqui com um echo; substituir pelo comando de deploy real)
-      - name: Deploy
-        run: echo "Step de deploy concluído com sucesso"
