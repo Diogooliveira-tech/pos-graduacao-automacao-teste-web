@@ -1,5 +1,5 @@
 # CI de Nível 01 - Disparo manual a partir de 1 clique
-name: "Execução Manual"
+name: 'Execução Manual'
 
 # Gatilho para execução manual
 on:
@@ -15,7 +15,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "lts/*"
+          node-version: 'lts/*'
 
       - name: Instalando Yarn
         run: npm install -g yarn
@@ -36,7 +36,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "lts/*"
+          node-version: 'lts/*'
 
       - name: Instalando dependências
         run: yarn install
@@ -54,7 +54,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "lts/*"
+          node-version: 'lts/*'
 
       - name: Instalando dependências
         run: yarn install
@@ -63,7 +63,7 @@ jobs:
       - name: Executando testes E2E com Cypress
         run: yarn run e2e
         env:
-          CYPRESS_BASE_URL: "https://automationexercise.com"
+          CYPRESS_BASE_URL: 'https://automationexercise.com'
 
       # Geração do Relatório Mochawesome
       - name: Gerar relatório com mochawesome

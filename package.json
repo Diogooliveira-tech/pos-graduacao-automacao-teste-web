@@ -4,7 +4,9 @@
   "main": "index.js",
   "scripts": {
     "test": "cypress run",
-    "e2e": "cypress run"
+    "e2e": "cypress run",
+    "lint": "eslint cypress/**/*.js",
+    "format": "prettier --write ."
   },
   "keywords": [],
   "author": "Diogo marques de oliveira",
@@ -13,6 +15,10 @@
   "devDependencies": {
     "@faker-js/faker": "^9.0.0",
     "cypress": "^13.7.3",
-    "cypress-mochawesome-reporter": "^3.8.2"
+    "cypress-mochawesome-reporter": "^3.8.2",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "globals": "^15.11.0",
+    "prettier": "^3.3.3"
   }
 }

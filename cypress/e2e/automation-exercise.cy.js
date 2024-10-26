@@ -2,80 +2,76 @@
 
 describe('Automation Exercise', () => {
   it('Test Case 1: Cadastrar um usuário', () => {
-    const timestamp = new Date().getTime() //Classe do Js, alternativa para contornar o problema do email já existente. Com isso, o Sistema valida que são cadastros diferentes
+    const timestamp = new Date().getTime(); //Classe do Js, alternativa para contornar o problema do email já existente. Com isso, o Sistema valida que são cadastros diferentes
 
-    cy.visit('https://automationexercise.com') //visita a pagina
+    cy.visit('https://automationexercise.com'); //visita a pagina
 
     //preenche informações iniciais
-      //cy.get('a[href$=login]').click() // alternativa 1
-      cy.contains('Signup').click()     // alternativa 2
+    //cy.get('a[href$=login]').click() // alternativa 1
+    cy.contains('Signup').click(); // alternativa 2
 
-      const signUpName = 'Tester QA'
+    const signUpName = 'Tester QA';
 
-      cy.get('[data-qa="signup-name"]').type(signUpName)
-      cy.get('[data-qa="signup-email"]').type(`testEs-${timestamp}@gmail.com`) //concatenação da variavel timestamp com email
-      cy.contains('button', 'Signup').click()
+    cy.get('[data-qa="signup-name"]').type(signUpName);
+    cy.get('[data-qa="signup-email"]').type(`testEs-${timestamp}@gmail.com`); //concatenação da variavel timestamp com email
+    cy.contains('button', 'Signup').click();
 
-     
     //seleciona checkbox para title
-      // radio ou checkbox -> check
-      //cy.get('#id_gender2').check()
-      cy.get('input[type=radio]').check('Mrs') // alternativas, essa mais descritiva
-      //cy.get('input[type=radio]').check('Mr')
-      //cy.get('input[type=radio]').first().check() //seleciona o primeiro radio
-      //cy.get('input[type=radio]').last().check() //seleciona o ultimo radio
-      cy.get('input[type=radio]').eq(1).check() // Ex: Se tivesse 3 elementos [0, 1, 2] comando eq serve "Pra Lista" para passar a posição desejada do elemento  
+    // radio ou checkbox -> check
+    //cy.get('#id_gender2').check()
+    cy.get('input[type=radio]').check('Mrs'); // alternativas, essa mais descritiva
+    //cy.get('input[type=radio]').check('Mr')
+    //cy.get('input[type=radio]').first().check() //seleciona o primeiro radio
+    //cy.get('input[type=radio]').last().check() //seleciona o ultimo radio
+    cy.get('input[type=radio]').eq(1).check(); // Ex: Se tivesse 3 elementos [0, 1, 2] comando eq serve "Pra Lista" para passar a posição desejada do elemento
 
-    //preenche senha  
-      cy.get('[type=password]').type('12345', { log: false }) //isso oculta a senha
-      //cy.get('[data-qa="password"]').type('54321')
+    //preenche senha
+    cy.get('[type=password]').type('12345', { log: false }); //isso oculta a senha
+    //cy.get('[data-qa="password"]').type('54321')
 
-    //combolist  
-      cy.get('[data-qa="days"]').select('5')
-      cy.get('[data-qa="months"]').select('February')
-      //cy.get('[data-qa="months"]').select('2')
-      cy.get('[data-qa="years"]').select('2004')
+    //combolist
+    cy.get('[data-qa="days"]').select('5');
+    cy.get('[data-qa="months"]').select('February');
+    //cy.get('[data-qa="months"]').select('2')
+    cy.get('[data-qa="years"]').select('2004');
 
-    //seleciona checkbox Date of Birth   
-      cy.get('input[type=checkbox]#newsletter').check()
-      //cy.get('input[name="newsletter"]').check()
-      cy.get('input[type=checkbox]#optin').check()
+    //seleciona checkbox Date of Birth
+    cy.get('input[type=checkbox]#newsletter').check();
+    //cy.get('input[name="newsletter"]').check()
+    cy.get('input[type=checkbox]#optin').check();
 
-    //addres information 
-      cy.get('[data-qa="first_name"]').type('homer')
-      cy.get('[data-qa="last_name"]').type('simpson')
-      cy.get('[data-qa="company"]').type('Direção LTDA')
-      cy.get('[data-qa="address"]').type('rua direita')
-      cy.get('[data-qa="country"]').select('United States')
-      cy.get('[data-qa="state"]').type('Alasca')
-      cy.get('[data-qa="city"]').type('Homer')
-      cy.get('[data-qa="zipcode"]').type('99775')
-      cy.get('[data-qa="mobile_number"]').type('111 999 888')
+    //addres information
+    cy.get('[data-qa="first_name"]').type('homer');
+    cy.get('[data-qa="last_name"]').type('simpson');
+    cy.get('[data-qa="company"]').type('Direção LTDA');
+    cy.get('[data-qa="address"]').type('rua direita');
+    cy.get('[data-qa="country"]').select('United States');
+    cy.get('[data-qa="state"]').type('Alasca');
+    cy.get('[data-qa="city"]').type('Homer');
+    cy.get('[data-qa="zipcode"]').type('99775');
+    cy.get('[data-qa="mobile_number"]').type('111 999 888');
 
-      cy.get('[data-qa="create-account"]').click()
-      //cy.contains('Create Account').click()
+    cy.get('[data-qa="create-account"]').click();
+    //cy.contains('Create Account').click()
 
     //resultado esperado
-      //cy.url().should('have.text', '') //tenho.texto "Nome-que-espero"
-      cy.url().should('includes', 'account_created') // deve incluir parte do texto "account_created" trecho final da url
-      // -> https://automationexercise.com/account_created //umas das formas de validar que deu certo e acessou a pagina que era esperado é o comando cy.url('')
+    //cy.url().should('have.text', '') //tenho.texto "Nome-que-espero"
+    cy.url().should('includes', 'account_created'); // deve incluir parte do texto "account_created" trecho final da url
+    // -> https://automationexercise.com/account_created //umas das formas de validar que deu certo e acessou a pagina que era esperado é o comando cy.url('')
 
-      cy.get('[data-qa="account-created"]').should('be.visible') // o texto "xpto" deve estar visivel 
+    cy.get('[data-qa="account-created"]').should('be.visible'); // o texto "xpto" deve estar visivel
 
-     cy.get('[data-qa="continue-button"]').click()
+    cy.get('[data-qa="continue-button"]').click();
 
-    // assertação do nome do usuario 
-      //cy.contains(`Logged in as ${signUpName}`)
-      //cy.get('ul.nav.navbar-nav').should('contain', `Logged in as ${signUpName}`)
-      //cy.get('b').should('contain', signUpName)
-      cy.get('i.fa-user').parent().should('contain', signUpName)
-
-
+    // assertação do nome do usuario
+    //cy.contains(`Logged in as ${signUpName}`)
+    //cy.get('ul.nav.navbar-nav').should('contain', `Logged in as ${signUpName}`)
+    //cy.get('b').should('contain', signUpName)
+    cy.get('i.fa-user').parent().should('contain', signUpName);
   });
-
 });
 
-    /*
+/*
     Triplo A - (Arrange, Act e Assert)
     
         Preparacao - Arrange 

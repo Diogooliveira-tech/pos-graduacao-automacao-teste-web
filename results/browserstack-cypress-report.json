@@ -1,1 +1,164 @@
-{"build_id":"f616c0fcdcb2d3636e950d63cf06e7a9e6920ef7","build_name":"build-name: 9","project_name":"automacao-web-pgats","build_url":"https://automate.browserstack.com/dashboard/v2/builds/f616c0fcdcb2d3636e950d63cf06e7a9e6920ef7","public_build_url":"https://automate.browserstack.com/dashboard/v2/public-build/YVZXSWFXZFUxSlNCVk1YRTd2UkdwNGtncHBPbmFsUExTaFExMTZoZzJnR0w4ME1VVUdpdDdCNk1kYUxiUlR6eXY0VnZ6b3N4NlZvNjBqSXBXM3J5L2c9PS0tWlptMFhHQ0s3Y3VtM2w2SDNVdDEvZz09--60fbbaec52f77c6f8dce240eb258b15eae2620c7","build_duration":{"started_at":"2024-09-10T19:19:43.000Z","total_duration":446,"setup_time":197,"test_run_time":128,"misc_time":121},"cypress_version":"13.6.4","cli_version":"BStack-Cypress-CLI/1.31.6 (x64/win32/10.0.22631)","rows":{"automation-exercise-final-with-pom.cy.js":{"path":"cypress/e2e","meta":{"total":2,"passed":2,"failed":0,"skipped":0,"passed_with_skipped":0},"sessions":[{"meta":{"started_at":"2024-09-10T19:21:51.910Z","duration":69.205,"total_tests":10,"passed":10,"failed":0,"skipped":0,"pending":0},"name":"chrome 128, Windows 10","status":"passed","link":"https://automate.browserstack.com/dashboard/v2/builds/f616c0fcdcb2d3636e950d63cf06e7a9e6920ef7/cypress-tests/tests/db875896cf6004e9d9f6d7de601276a22fa0ee1cY3lwcmVzcy9lMmUvYXV0b21hdGlvbi1leGVyY2lzZS1maW5hbC13aXRoLXBvbS5jeS5qcw==","public_url":"https://automate.browserstack.com/dashboard/v2/builds/f616c0fcdcb2d3636e950d63cf06e7a9e6920ef7/cypress-tests/tests/db875896cf6004e9d9f6d7de601276a22fa0ee1cY3lwcmVzcy9lMmUvYXV0b21hdGlvbi1leGVyY2lzZS1maW5hbC13aXRoLXBvbS5jeS5qcw==?auth_token=bd4b848c1d4152698d001a2027909ef36e86300da3217a7906638051b2599326\u0026build_token=RExWVDM3bTRIa1VGZkVOL1V6bkxIK25veEp1ZDc0L0ZDTUNha1lCTGRHOD0tLWpEUzhOWXpUakROekRzOFQxTytFL2c9PQ==--a21a52c16af80c0214114553af84f62b5458a8e0","tests":[{"name":"Test Case 1: Cadastrar um usuário","status":"passed","duration":13.37},{"name":"Test Case 2: Login User with correct email and password","status":"passed","duration":4.28},{"name":"Test Case 3: Login User with incorrect email and password","status":"passed","duration":3.89},{"name":"Test Case 4: Logout User","status":"passed","duration":8.42},{"name":"Test Case 5: Register User with existing email","status":"passed","duration":4.58},{"name":"Test Case 6: Contact Us Form","status":"passed","duration":4.52},{"name":"Test Case 8: Verify All Products and product detail page","status":"passed","duration":3.67},{"name":"Test Case 9: Search Product","status":"passed","duration":6.28},{"name":"Test Case 10: Verify Subscription in home page","status":"passed","duration":2.19},{"name":"Test Case 15: Place Order: Register before Checkout","status":"passed","duration":17.86}]},{"meta":{"started_at":"2024-09-10T19:25:32.916Z","duration":79.906,"total_tests":10,"passed":10,"failed":0,"skipped":0,"pending":0},"name":"chrome 127, Windows 10","status":"passed","link":"https://automate.browserstack.com/dashboard/v2/builds/f616c0fcdcb2d3636e950d63cf06e7a9e6920ef7/cypress-tests/tests/06725f47ef25796d893c1e0418aac771a38e55a8Y3lwcmVzcy9lMmUvYXV0b21hdGlvbi1leGVyY2lzZS1maW5hbC13aXRoLXBvbS5jeS5qcw==","public_url":"https://automate.browserstack.com/dashboard/v2/builds/f616c0fcdcb2d3636e950d63cf06e7a9e6920ef7/cypress-tests/tests/06725f47ef25796d893c1e0418aac771a38e55a8Y3lwcmVzcy9lMmUvYXV0b21hdGlvbi1leGVyY2lzZS1maW5hbC13aXRoLXBvbS5jeS5qcw==?auth_token=3d440572c3e74ae02ff772bb499f2356dac5a5d326435a820d7852eb6d45e4a6\u0026build_token=cHJPOWtrcHdjRXZUZUM4SVV6T1lZWHJSNjFUOFZyL0U1cG9WelBvdU1Kcz0tLTBnbVpqbDBJOTI3aG43Q3IwckEyRUE9PQ==--07f66ac2310ed453905fa4b7349b1fc19566bdc5","tests":[{"name":"Test Case 1: Cadastrar um usuário","status":"passed","duration":12.66},{"name":"Test Case 2: Login User with correct email and password","status":"passed","duration":4.57},{"name":"Test Case 3: Login User with incorrect email and password","status":"passed","duration":3.65},{"name":"Test Case 4: Logout User","status":"passed","duration":6.72},{"name":"Test Case 5: Register User with existing email","status":"passed","duration":4.42},{"name":"Test Case 6: Contact Us Form","status":"passed","duration":10.43},{"name":"Test Case 8: Verify All Products and product detail page","status":"passed","duration":4.93},{"name":"Test Case 9: Search Product","status":"passed","duration":7.08},{"name":"Test Case 10: Verify Subscription in home page","status":"passed","duration":3.07},{"name":"Test Case 15: Place Order: Register before Checkout","status":"passed","duration":22.24}]}]}}}
+{
+  "build_id": "f616c0fcdcb2d3636e950d63cf06e7a9e6920ef7",
+  "build_name": "build-name: 9",
+  "project_name": "automacao-web-pgats",
+  "build_url": "https://automate.browserstack.com/dashboard/v2/builds/f616c0fcdcb2d3636e950d63cf06e7a9e6920ef7",
+  "public_build_url": "https://automate.browserstack.com/dashboard/v2/public-build/YVZXSWFXZFUxSlNCVk1YRTd2UkdwNGtncHBPbmFsUExTaFExMTZoZzJnR0w4ME1VVUdpdDdCNk1kYUxiUlR6eXY0VnZ6b3N4NlZvNjBqSXBXM3J5L2c9PS0tWlptMFhHQ0s3Y3VtM2w2SDNVdDEvZz09--60fbbaec52f77c6f8dce240eb258b15eae2620c7",
+  "build_duration": {
+    "started_at": "2024-09-10T19:19:43.000Z",
+    "total_duration": 446,
+    "setup_time": 197,
+    "test_run_time": 128,
+    "misc_time": 121
+  },
+  "cypress_version": "13.6.4",
+  "cli_version": "BStack-Cypress-CLI/1.31.6 (x64/win32/10.0.22631)",
+  "rows": {
+    "automation-exercise-final-with-pom.cy.js": {
+      "path": "cypress/e2e",
+      "meta": {
+        "total": 2,
+        "passed": 2,
+        "failed": 0,
+        "skipped": 0,
+        "passed_with_skipped": 0
+      },
+      "sessions": [
+        {
+          "meta": {
+            "started_at": "2024-09-10T19:21:51.910Z",
+            "duration": 69.205,
+            "total_tests": 10,
+            "passed": 10,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0
+          },
+          "name": "chrome 128, Windows 10",
+          "status": "passed",
+          "link": "https://automate.browserstack.com/dashboard/v2/builds/f616c0fcdcb2d3636e950d63cf06e7a9e6920ef7/cypress-tests/tests/db875896cf6004e9d9f6d7de601276a22fa0ee1cY3lwcmVzcy9lMmUvYXV0b21hdGlvbi1leGVyY2lzZS1maW5hbC13aXRoLXBvbS5jeS5qcw==",
+          "public_url": "https://automate.browserstack.com/dashboard/v2/builds/f616c0fcdcb2d3636e950d63cf06e7a9e6920ef7/cypress-tests/tests/db875896cf6004e9d9f6d7de601276a22fa0ee1cY3lwcmVzcy9lMmUvYXV0b21hdGlvbi1leGVyY2lzZS1maW5hbC13aXRoLXBvbS5jeS5qcw==?auth_token=bd4b848c1d4152698d001a2027909ef36e86300da3217a7906638051b2599326\u0026build_token=RExWVDM3bTRIa1VGZkVOL1V6bkxIK25veEp1ZDc0L0ZDTUNha1lCTGRHOD0tLWpEUzhOWXpUakROekRzOFQxTytFL2c9PQ==--a21a52c16af80c0214114553af84f62b5458a8e0",
+          "tests": [
+            {
+              "name": "Test Case 1: Cadastrar um usuário",
+              "status": "passed",
+              "duration": 13.37
+            },
+            {
+              "name": "Test Case 2: Login User with correct email and password",
+              "status": "passed",
+              "duration": 4.28
+            },
+            {
+              "name": "Test Case 3: Login User with incorrect email and password",
+              "status": "passed",
+              "duration": 3.89
+            },
+            {
+              "name": "Test Case 4: Logout User",
+              "status": "passed",
+              "duration": 8.42
+            },
+            {
+              "name": "Test Case 5: Register User with existing email",
+              "status": "passed",
+              "duration": 4.58
+            },
+            {
+              "name": "Test Case 6: Contact Us Form",
+              "status": "passed",
+              "duration": 4.52
+            },
+            {
+              "name": "Test Case 8: Verify All Products and product detail page",
+              "status": "passed",
+              "duration": 3.67
+            },
+            {
+              "name": "Test Case 9: Search Product",
+              "status": "passed",
+              "duration": 6.28
+            },
+            {
+              "name": "Test Case 10: Verify Subscription in home page",
+              "status": "passed",
+              "duration": 2.19
+            },
+            {
+              "name": "Test Case 15: Place Order: Register before Checkout",
+              "status": "passed",
+              "duration": 17.86
+            }
+          ]
+        },
+        {
+          "meta": {
+            "started_at": "2024-09-10T19:25:32.916Z",
+            "duration": 79.906,
+            "total_tests": 10,
+            "passed": 10,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0
+          },
+          "name": "chrome 127, Windows 10",
+          "status": "passed",
+          "link": "https://automate.browserstack.com/dashboard/v2/builds/f616c0fcdcb2d3636e950d63cf06e7a9e6920ef7/cypress-tests/tests/06725f47ef25796d893c1e0418aac771a38e55a8Y3lwcmVzcy9lMmUvYXV0b21hdGlvbi1leGVyY2lzZS1maW5hbC13aXRoLXBvbS5jeS5qcw==",
+          "public_url": "https://automate.browserstack.com/dashboard/v2/builds/f616c0fcdcb2d3636e950d63cf06e7a9e6920ef7/cypress-tests/tests/06725f47ef25796d893c1e0418aac771a38e55a8Y3lwcmVzcy9lMmUvYXV0b21hdGlvbi1leGVyY2lzZS1maW5hbC13aXRoLXBvbS5jeS5qcw==?auth_token=3d440572c3e74ae02ff772bb499f2356dac5a5d326435a820d7852eb6d45e4a6\u0026build_token=cHJPOWtrcHdjRXZUZUM4SVV6T1lZWHJSNjFUOFZyL0U1cG9WelBvdU1Kcz0tLTBnbVpqbDBJOTI3aG43Q3IwckEyRUE9PQ==--07f66ac2310ed453905fa4b7349b1fc19566bdc5",
+          "tests": [
+            {
+              "name": "Test Case 1: Cadastrar um usuário",
+              "status": "passed",
+              "duration": 12.66
+            },
+            {
+              "name": "Test Case 2: Login User with correct email and password",
+              "status": "passed",
+              "duration": 4.57
+            },
+            {
+              "name": "Test Case 3: Login User with incorrect email and password",
+              "status": "passed",
+              "duration": 3.65
+            },
+            {
+              "name": "Test Case 4: Logout User",
+              "status": "passed",
+              "duration": 6.72
+            },
+            {
+              "name": "Test Case 5: Register User with existing email",
+              "status": "passed",
+              "duration": 4.42
+            },
+            {
+              "name": "Test Case 6: Contact Us Form",
+              "status": "passed",
+              "duration": 10.43
+            },
+            {
+              "name": "Test Case 8: Verify All Products and product detail page",
+              "status": "passed",
+              "duration": 4.93
+            },
+            {
+              "name": "Test Case 9: Search Product",
+              "status": "passed",
+              "duration": 7.08
+            },
+            {
+              "name": "Test Case 10: Verify Subscription in home page",
+              "status": "passed",
+              "duration": 3.07
+            },
+            {
+              "name": "Test Case 15: Place Order: Register before Checkout",
+              "status": "passed",
+              "duration": 22.24
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
