@@ -23,13 +23,13 @@ jobs:
         with:
           node-version: 'lts/*'
 
-      # Configura a versão do Yarn
-      - name: Configurando Yarn
-        run: yarn set version stable
+      # Habilita o Corepack e configura o Yarn
+      - name: Configurando Corepack para Yarn
+        run: corepack enable && corepack prepare yarn@stable --activate
 
       # Instala dependências, incluindo Cypress
       - name: Instalando dependências
-        run: yarn install --immutable
+        run: yarn install --immutable --immutable-cache
 
       # Cria o diretório cypress/reports, caso não exista
       - name: Criando diretório de relatórios
