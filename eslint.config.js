@@ -2,7 +2,8 @@ const cypressGlobals = require('globals').cypress;
 
 module.exports = [
   {
-    ignores: ['cypress/reports/**'], // Ignora a pasta de relatórios
+    // Ignora as pastas de relatórios e screenshots
+    ignores: ['cypress/reports/**', 'cypress/screenshots/**'],
     files: ['**/*.js'],
     languageOptions: {
       globals: {
