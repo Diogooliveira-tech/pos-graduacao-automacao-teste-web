@@ -29,7 +29,7 @@ jobs:
 
       # Instala dependências, incluindo Cypress (sem --immutable)
       - name: Instalando dependências
-        run: yarn install
+        run: yarn install --no-immutable
 
       # Cria o diretório cypress/reports, caso não exista
       - name: Criando diretório de relatórios
