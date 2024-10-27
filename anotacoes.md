@@ -173,3 +173,126 @@ Explicação das Opções:
 "singleQuote": true – Usa aspas simples ao invés de aspas duplas.
 "tabWidth": 2 – Define o tamanho da tabulação como 2 espaços.
 "trailingComma": "es5" – Adiciona vírgulas no final de listas e objetos (ES5 e além).
+
+
+----
+
+# Automação de Testes em Aplicações Web
+
+Este repositório contém materiais e exemplos relacionados à disciplina de **Automação de Testes em Aplicações Web**. O objetivo dessa disciplina é capacitar os alunos a compreender e aplicar os conceitos fundamentais e avançados relacionados à automação de testes em aplicações web. Ao final dessa disciplina, o objetivo é estar preparado para desenvolver e implementar testes automatizados de alta qualidade, eficiência e confiabilidade em projetos web.
+
+## Objetivo da Disciplina
+
+Capacitar o aluno a compreender e aplicar os conceitos fundamentais e avançados relacionados à automação de testes em aplicações web, fornecendo uma base sólida de conhecimentos teóricos e práticos para desenvolver e implementar testes automatizados de alta qualidade, eficiência e confiabilidade.
+
+## Ementa da Disciplina
+
+- Introdução a Aplicações Web
+- HTML para construção das páginas
+- CSS para estilização das páginas
+- Javascript para interação com o usuário e servidor
+- A interação do Frontend com o Backend
+- Requisições Síncronas e Assíncronas
+- CSS Selector e XPath
+- Fundamentos e conceitos sobre Automação de Testes Web
+- Adicionando bibliotecas para estruturação dos testes e interação com navegadores Web
+- Escrevendo o primeiro teste automatizado Web
+- Estratégias de Identificação de Elementos
+- Esperas Explícitas e Implícitas
+- Comboboxes, Janelas e Drag and Drop
+- Tirando Screenshots
+- Execução de Testes Headless
+- Design Patterns para Automação Web
+- Configurações Avançadas
+- Execução de testes na nuvem
+- Relatórios de execução de testes
+- Boas práticas no uso da ferramenta
+
+## Como Usar
+
+Clone o repositório e siga os exemplos e exercícios propostos para aprimorar seus conhecimentos em automação de testes web. Certifique-se de seguir a ementa do curso e utilizar as boas práticas mencionadas para obter o máximo de proveito deste conteúdo.
+
+## Dependências do Projeto
+
+- **Faker**: Biblioteca para geração de dados aleatórios.  
+  Comando para instalar:
+  ```bash
+  npm install -D @faker-js/faker
+  ```
+
+## Configuração de Linting e Formatação de Código
+
+Este projeto utiliza ESLint e Prettier para garantir a qualidade e consistência do código.
+
+1. ESLint
+   O ESLint é uma ferramenta de análise de código estático que ajuda a identificar e corrigir problemas de padrão de código e possíveis erros. Neste projeto, o ESLint está configurado para verificar as melhores práticas e regras recomendadas pelo Cypress e para garantir que o código siga o padrão do Prettier.
+
+Comando para Rodar o Lint
+Para verificar o código com o ESLint, use o comando: "npm run lint".
+
+Esse comando verifica todos os arquivos JavaScript no diretório cypress/\*_/_.js. Caso encontre problemas de formatação ou padrão, eles serão listados no terminal.
+
+Configuração do ESLint (eslint.config.js)
+O arquivo eslint.config.js define as regras de linting específicas para este projeto. Ele inclui:
+
+Regras de boas práticas do ESLint
+Configurações recomendadas para Cypress
+Integração com o Prettier para garantir formatação consistente
+Configuração básica do eslint.config.js:
+
+const cypressGlobals = require('globals').cypress;
+
+module.exports = [
+{
+ignores: ['cypress/reports/**'], // Ignora a pasta de relatórios
+files: ['**/*.js'],
+languageOptions: {
+globals: {
+...cypressGlobals,
+browser: true,
+node: true
+}
+},
+plugins: {
+cypress: require('eslint-plugin-cypress'),
+prettier: require('eslint-plugin-prettier')
+},
+rules: {
+...require('eslint-plugin-cypress').configs.recommended.rules,
+...require('eslint-config-prettier').rules,
+'prettier/prettier': 'error'
+}
+}
+];
+
+## 2. Prettier
+
+O Prettier é um formatador de código que garante consistência na formatação do código. Ele é configurado para este projeto com as regras definidas no arquivo .prettierrc.
+
+Comando para Rodar o Prettier
+Para corrigir automaticamente a formatação do código, use o comando: "npm run format"
+
+Este comando aplicará as regras de formatação em todos os arquivos do projeto.
+
+Configuração do Prettier (.prettierrc)
+O arquivo .prettierrc define as preferências de formatação, como uso de ponto e vírgula, aspas simples, etc. Aqui está a configuração:
+
+{
+"semi": true,
+"singleQuote": true,
+"tabWidth": 2,
+"trailingComma": "es5"
+}
+
+- semi: Adiciona ponto e vírgula ao final das instruções.
+- singleQuote: Usa aspas simples ao invés de aspas duplas.
+- tabWidth: Define o tamanho da tabulação para 2 espaços.
+- trailingComma: Adiciona vírgula no final de objetos e arrays, onde aplicável.
+
+## Resumo dos Comandos
+
+Comando : Descrição
+npm run lint : Verifica o código com ESLint
+npm run format : Formata o código de acordo com as regras do Prettier
+
+Essa configuração garante que o código siga boas práticas de formatação e qualidade, facilitando a leitura e manutenção.
