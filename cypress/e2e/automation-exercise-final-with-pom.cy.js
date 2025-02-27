@@ -15,7 +15,7 @@ describe('Automation Exercise', () => {
     cy.visit('/');
   });
 
-  it('Test Case 1: Cadastrar um usuário', () => {
+  it('Caso de teste 1: Cadastrar um usuário', () => {
     // Arrange
     menu.irParaLoginCadastro();
 
