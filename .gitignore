@@ -7,3 +7,21 @@ screenshots/
 npm_install_debug.log
 cypress/screenshots/
 cypress/videos/
+cypress/reports/
+
+# Arquivos sensíveis
+browserstack.json
+
+# Variáveis de ambiente
+.env
+.env.local
+.env.production
+.env.staging
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Logs adicionais
+yarn-error.log
+yarn-debug.log*
